@@ -7,23 +7,23 @@ process.stdin.on('readable', function() {
 	if (!input) {
 		return;
 	};
-
-	var instruction = input.trim();
-	switch(instruction) {
+	inputToString = input.toString();
+	var instruction = inputToString.trim();
+	switch (instruction) {
 		case '/exit':
 			process.stdout.write('Quitting app!\n');
 			process.exit();
-		break;
+			break;
 		case '/sayhello':
 			process.stdout.write('hello!\n');
-		break;
+			break;
 		case '/getOSinfo':
 			OSinfo.print(); 
-		break;
+			break;
 		case '/toTime':
 			toTime.print();
-		break;
+			break;
 		default:
 			process.stderr.write('Wrong instruction!\n');
-		};
+	};
 });
